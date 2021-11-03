@@ -1,0 +1,31 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2021.10
+    steps:
+      - checkout
+      - run:
+          name: Basic-setup
+          command: |
+            sudo apt-get update
+            sudo apt-get install apache2
+            sudo apt-get install libapache2-mod-wsgi-py3
+            sudo apt-get install python3-pip
+            sudo pip install flask
+            sudo apt install git
+#           git config --global user.name "hari"
+#           git config --global user.email hariprasadp@qburst.com
+
+      - run:
+          name: Flask-app-file
+          command: |
+            git clone git@github.com:Haripofficial/flask-aws.git
+            sudo ln -sT ~/flask-aws /var/www/html/flask-aws
+            cat default.conf >> 000-default.conf 
+            sudo service apache2 restart
+
+
+
+
+              
