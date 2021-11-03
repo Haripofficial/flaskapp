@@ -22,7 +22,7 @@ jobs:
           command: |
             git clone git@github.com:Haripofficial/flask-aws.git
             sudo ln -sT ~/flask-aws /var/www/html/flask-aws
-            cat default.conf >> /etc/apache2/sites-available/000-default.conf 
+            sudo cat default.conf >> /etc/apache2/sites-available/000-default.conf 
             sudo service apache2 restart
 
 
