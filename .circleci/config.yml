@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Flask-app-file
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@54.201.42.160
+            ssh -o StrictHostKeyChecking=no ubuntu@54.201.42.160 pwd
             echo "Successfull authentication"
             git clone git@github.com:Haripofficial/flaskapp.git
             sudo ln -sT ~/flaskapp /var/www/html/flaskapp
