@@ -20,9 +20,10 @@ jobs:
       - run:
           name: Flask-app-file
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@54.201.42.160 pwd
+            ssh -o StrictHostKeyChecking=no ubuntu@54.201.42.160 
             echo "Successfull authentication"
             git clone git@github.com:Haripofficial/flaskapp.git
+            ls -la
             sudo ln -sT ~/flaskapp /var/www/html/flaskapp
             sudo mv /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/000-default.conf.bak
             sudo mv default.conf /etc/apache2/sites-available/
