@@ -26,6 +26,7 @@ jobs:
             sudo mv default.conf /etc/apache2/sites-available/
             sudo service apache2 restart
             hostname -I
+            curl localhost
 
 
 
